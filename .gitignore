@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+React/react-memory-game/node_modules
+React/react-memory-game/.pnp
+React/react-memory-game/.pnp.js
+
+# testing
+React/react-memory-game/coverage
+
+# production
+React/react-memory-game/build
+
+# misc
+React/react-memory-game.DS_Store
+React/react-memory-game.env.local
+React/react-memory-game.env.development.local
+React/react-memory-game.env.test.local
+React/react-memory-game.env.production.local
+
+React/react-memory-gamenpm-debug.log*
+React/react-memory-gameyarn-debug.log*
+React/react-memory-gameyarn-error.log*
