@@ -10,4 +10,6 @@ Classic card game, Flip the cards and match done in Vanilla JavaScript, Svelte, 
 
 <!-- TODO Ad Gif animate of the game  -->
 
+![memorie game example](https://)
+
 Please check the contribution.md
