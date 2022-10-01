@@ -8,4 +8,4 @@ PR's are welcome
 
 <!-- TODO: contribution.md link  -->
 
-Please read the contribution.md
+Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md)
