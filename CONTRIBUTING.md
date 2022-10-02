@@ -5,7 +5,11 @@ Fork the repository to you GitHub
 
 # Step 2: Clone your fork
 
-While still in your repository, click on the code drop down menu. Now you can either download the zip file and extract it on your local system or copy the https url and use the command ```bash git clone <https url> ``` to clone it to a local directory/folder.
+While still in your repository, click on the code drop down menu. Now you can either download the zip file and extract it on your local system or copy the https url and use the command git clone <https url> to clone it to a local directory/folder. 
+  
+```bash
+git clone <https url>
+```
 
 ![clone example](https://github.com/GeraAlcantara/cards-memory-game/blob/main/img/clone.jpg?raw=true)
 
