@@ -1,3 +1,5 @@
+import JavaScriptSVG from '../img/js-badge.svg';
+
 export default function MemoryCard({ data, handleClickCard }) {
   return (
     <div
@@ -7,13 +9,13 @@ export default function MemoryCard({ data, handleClickCard }) {
       <img
         data-cell-index={data.id}
         className='back-face'
-        src={'/img/js-badge.svg'}
+        src={JavaScriptSVG}
         alt="Click me!"
       />
       <img
         data-cell-index={data.id}
         className='front-face'
-        src={data.imgPath}
+        src={data.image}
         alt={data.face}
       />
     </div>

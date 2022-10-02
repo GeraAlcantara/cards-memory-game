@@ -1,28 +1,6 @@
 import React, { useState } from "react";
 import MemoryCard from "./components/MemoryCard";
-
-const createMatrix = () => {
-  const distinct = ["ember", "node", "svelte", "angular", "react", "vue"];
-  const matrix = [];
-  for (let face of distinct) {
-    const cell = {
-      face,
-      imgPath: `/img/${face}.svg`,
-    };
-    let pair = [cell, cell];
-    matrix.push(...pair);
-  }
-  // shuffle array
-  for (let i = matrix.length - 1; i > 0; i--) {
-    let randomPos = Math.floor(Math.random() * (i + 1));
-    [matrix[i], matrix[randomPos]] = [matrix[randomPos], matrix[i]];
-  }
-  return matrix.map((cell, index) => ({
-    ...cell,
-    id: index,
-    revealed: false,
-  }));
-};
+import { createMatrix } from './helper/shuffle';
 
 function App() {
   const [grid, setGrid] = useState(createMatrix());
