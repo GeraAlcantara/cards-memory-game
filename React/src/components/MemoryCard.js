@@ -1,12 +1,20 @@
-export default function MemoryCard(props) {
+export default function MemoryCard({ data, handleClickCard }) {
   return (
-    <div className="memory-card" data-framework={props.face} adss>
-      <img className="front-face" src={props.imgPath} alt={props.face} />
+    <div
+      className={`memory-card ${data.revealed ? 'flip' : ''}`}
+      onClick={handleClickCard}
+    >
       <img
-        className="back-face"
-        // src={require("../img/js-badge.svg").default} Remove JS badge as back-face, may be confusing
-        src={'/img/blank.svg'}
-        alt={props.face || 'Click the card'} // Alt will default to dataFramework, in baseGame every alt is the same as well
+        data-cell-index={data.id}
+        className='back-face'
+        src={'/img/js-badge.svg'}
+        alt="Click me!"
+      />
+      <img
+        data-cell-index={data.id}
+        className='front-face'
+        src={data.imgPath}
+        alt={data.face}
       />
     </div>
   );
