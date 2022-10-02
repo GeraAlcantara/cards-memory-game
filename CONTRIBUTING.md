@@ -26,6 +26,10 @@ cd card-memory-game
 # Step 4: Pull the latest changes from upstream into your local repository
 
 Before you start making any changes to your local files, it's a good practice to first synchronize your local repository with the project repository. Use git pull upstream master to "pull" any changes from the "master" branch of the "upstream" into your local repository. (If the project repository uses "main" instead of "master" for its default branch, then you would use git pull upstream main instead.)
+  
+  ```bash
+git pull upstream master
+```
 
 If you forked and cloned the project repository just a few minutes ago, it's very unlikely there will be any changes, in which case Git will report that your local repository is "already up to date". But if there are any changes, they will automatically be merged into your local repository.
 
@@ -44,16 +48,25 @@ git checkout -b svelte-game
 If you want to make the svlet version of the game
 
 Use git branch to show your local branches. You should see your new branch as well as "main", and your new branch should have an asterisk next to it to indicate that it's "checked out" (meaning that you're working in it).
+  
+```bash
+git branch
+```
 
 # Step 6: Make changes in your local repository
 
 Use a text editor or IDE to make the changes you planned to the files in your local repository. Because you checked out a branch in the previous step, any edits you make will only affect that branch.
 
-# Step 7: Commit your changes
+# Step 7: Git Add and Commit your changes
 
-After you make a set of changes, use git add -A to stage your changes and `git commit -m "DESCRIPTION OF CHANGES"` to commit them.
+After you make a set of changes, use git add -A or git add . to stage your changes and `git commit -m "DESCRIPTION OF CHANGES"` to commit them.
 
 For example, `commit -m "create base for svelte game versio"` for one of my commits.
+  
+ ```bash
+git add .
+git git commit -m"<Description of changes>"
+```
 
 If you are making multiple sets of changes, it's a good practice to make a commit after each set.
 
