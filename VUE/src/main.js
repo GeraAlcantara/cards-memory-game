@@ -2,8 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import './assets/gameBase/src/css/styles.css'
-import './assets/gameBase/src/js/main'
+import './assets/main.css'
 const app = createApp(App)
 
 app.use(router)

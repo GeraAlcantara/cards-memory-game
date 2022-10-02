@@ -1,9 +1,5 @@
 {
   "name": "cards-memory-game",
-  "author": {
-    "name": "Shinenbayar Gansukh",
-    "email": "alkhimch@gmail.com"
-  },
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
