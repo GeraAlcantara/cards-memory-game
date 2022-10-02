@@ -61,11 +61,11 @@ Use a text editor or IDE to make the changes you planned to the files in your lo
 
 After you make a set of changes, use git add -A or git add . to stage your changes and `git commit -m "DESCRIPTION OF CHANGES"` to commit them.
 
-For example, `commit -m "create base for svelte game versio"` for one of my commits.
+For example, `commit -m "create base for svelte game version"` for one of my commits.
   
  ```bash
 git add .
-git git commit -m"<Description of changes>"
+git commit -m"<Description of changes>"
 ```
 
 If you are making multiple sets of changes, it's a good practice to make a commit after each set.
@@ -75,19 +75,27 @@ If you are making multiple sets of changes, it's a good practice to make a commi
 When you are done making all of your changes, upload these changes to your fork using git push origin BRANCH_NAME. This "pushes" your changes to the "BRANCH_NAME" branch of the "origin" (which is your fork on GitHub).
 
 For example: `git push origin svelte-game`
+  
+  ```bash
+git push origin <BRANCH_NAME>
+```
 
 # Step 9: Begin the pull request
 
 Return to your fork on GitHub, and refresh the page. You may see a highlighted area that displays your recently pushed branch:
+  ![Screenshot from 2022-10-02 08-21-40](https://user-images.githubusercontent.com/110360901/193435745-29a63b49-0281-4028-b803-59a51d476c5f.png)
 
 Click the green Compare & pull request button to begin the pull request.
 
 # Step 10: Create the pull request
 
 Before submitting the pull request, you first need to describe the changes you made (rather than asking the project maintainers to figure them out on their own). You should write a descriptive title for your pull request, and then include more details in the body of the pull request. If there are any related GitHub issues, make sure to mention those by number. The body can include Markdown formatting, and you can click the Preview tab to see how it will look.
+  
+  ![Screenshot from 2022-10-02 08-25-49](https://user-images.githubusercontent.com/110360901/193435881-761795ce-fe72-4f2d-9cd5-3ae2d2f71f69.png)
 
 On the right side, you may see a link to the project's Contributing guidelines. This is primarily worth reading through if you are submitting substantial code (rather than just fixing a typo), but it may still be worth scanning through at this point.
 
 Below the pull request form, you will see a list of the commits you made in your branch, as well as the "diffs" for all of the files you changed.
+  ![imageedit_2_8648072164](https://user-images.githubusercontent.com/110360901/193435989-9efb9198-6551-4bc0-8c8d-e7bec3255fbe.png)
 
 If everything looks good, click the green Create pull request button!
