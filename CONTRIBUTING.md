@@ -45,7 +45,7 @@ For example,
 git checkout -b svelte-game
 ```
 
-If you want to make the svlet version of the game
+If you want to make the svelte version of the game
 
 Use git branch to show your local branches. You should see your new branch as well as "main", and your new branch should have an asterisk next to it to indicate that it's "checked out" (meaning that you're working in it).
   
