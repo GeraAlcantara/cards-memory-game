@@ -22,8 +22,6 @@ export const App = () => {
         [cardName]: true,
       }));
       setClickable(true);
-      /* TODO: #33 Remove console log */
-      console.log("It matched !");
     } else {
       setOpenCards([]);
       setClickable(true);
