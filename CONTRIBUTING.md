@@ -96,5 +96,6 @@ Before submitting the pull request, you first need to describe the changes you m
 On the right side, you may see a link to the project's Contributing guidelines. This is primarily worth reading through if you are submitting substantial code (rather than just fixing a typo), but it may still be worth scanning through at this point.
 
 Below the pull request form, you will see a list of the commits you made in your branch, as well as the "diffs" for all of the files you changed.![imageedit_4_2018320298](https://user-images.githubusercontent.com/110360901/193436276-3b1dad3b-adcc-4e14-b1db-194573c85ee2.png)
+![Screenshot from 2022-10-02 08-48-44](https://user-images.githubusercontent.com/110360901/193436410-e327ed38-ae16-4a4e-91d4-e3f5cd14bb73.png)
 
 If everything looks good, click the green Create pull request button!
