@@ -1,9 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-React/react-memory-game/node_modules
-React/react-memory-game/.pnp
-React/react-memory-game/.pnp.js
+node_modules
+.pnp
+.pnp.js
 
 # testing
 React/react-memory-game/coverage
