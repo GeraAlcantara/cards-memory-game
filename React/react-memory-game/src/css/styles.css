@@ -44,11 +44,15 @@ body {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background-color: #527089;
     backface-visibility: hidden;
 }
 .front-face {
     transform: rotateY(180deg);
+    background-color: #527089;
+}
+
+.back-face {
+    background-color: #6589a7;
 }
 
 .memory-card.flip {

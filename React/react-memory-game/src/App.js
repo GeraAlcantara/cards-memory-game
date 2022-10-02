@@ -1,3 +1,5 @@
+import MemoryCard from "./components/MemoryCard";
+
 function App() {
     const cards = document.querySelectorAll(".memory-card");
 
@@ -27,7 +29,7 @@ function App() {
 
     function checkForMatch() {
         let isMatch =
-            firstCard.dataset.framework == secondCard.dataset.framework;
+            firstCard.dataset.framework === secondCard.dataset.framework;
         isMatch ? disableCards() : unflipCards();
     }
 
@@ -62,165 +64,66 @@ function App() {
         <div className="App">
             {/* <!-- Game container --> */}
             <section className="memory-game">
-                <div className="memory-card">
-                    <img
-                        className="front-face"
-                        src={require("./img/angular.svg").default}
-                        alt="angular"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="angular"
-                    />
-                </div>
-                <div className="memory-card">
-                    <img
-                        className="front-face"
-                        src={require("./img/angular.svg").default}
-                        alt="angular"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="angular"
-                    />
-                </div>
-                {/* <!-- End 2 Set of Cards for Angular --> */}
-                {/* <!-- 2 Set of Cards for React --> */}
-                <div className="memory-card" data-framework="React">
-                    <img
-                        className="front-face"
-                        src={require("./img/react.svg").default}
-                        alt="React"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                <div className="memory-card" data-framework="React">
-                    <img
-                        className="front-face"
-                        src={require("./img/react.svg").default}
-                        alt="React"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                {/* <!-- end 2 Set of Cards for React --> */}
-
-                {/* <!-- juego de cartas 3 ember --> */}
-                <div className="memory-card" data-framework="ember">
-                    <img
-                        className="front-face"
-                        src={require("./img/ember.svg").default}
-                        alt="ember"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                <div className="memory-card" data-framework="ember">
-                    <img
-                        className="front-face"
-                        src={require("./img/ember.svg").default}
-                        alt="ember"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                {/* <!-- end juego de cartas 1 ember --> */}
-
-                {/* <!-- juego de cartas 4 Vue --> */}
-                <div className="memory-card" data-framework="vue">
-                    <img
-                        className="front-face"
-                        src={require("./img/vue.svg").default}
-                        alt="vue"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                <div className="memory-card" data-framework="vue">
-                    <img
-                        className="front-face"
-                        src={require("./img/vue.svg").default}
-                        alt="vue"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                {/* <!-- end juego de cartas 4 Vue --> */}
-
-                {/* <!-- juego de cartas 5 node --> */}
-                <div className="memory-card" data-framework="node">
-                    <img
-                        className="front-face"
-                        src={require("./img/node.svg").default}
-                        alt="node"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                <div className="memory-card" data-framework="node">
-                    <img
-                        className="front-face"
-                        src={require("./img/node.svg").default}
-                        alt="node"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                {/* <!-- end juego de cartas 5 node --> */}
-
-                {/* <!-- juego de cartas 5 svelte --> */}
-                <div className="memory-card" data-framework="svelte">
-                    <img
-                        className="front-face"
-                        src={require("./img/svelte.svg").default}
-                        alt="svelte"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                <div className="memory-card" data-framework="svelte">
-                    <img
-                        className="front-face"
-                        src={require("./img/svelte.svg").default}
-                        alt="svelte"
-                    />
-                    <img
-                        className="back-face"
-                        src={require("./img/js-badge.svg").default}
-                        alt="memory card"
-                    />
-                </div>
-                {/* <!-- end juego de cartas 5 svelte --> */}
+                <MemoryCard
+                    dataFramework=""
+                    frontFace={require("./img/angular.svg").default}
+                    alt="angular"
+                />
+                <MemoryCard
+                    dataFramework=""
+                    frontFace={require("./img/angular.svg").default}
+                    alt="angular"
+                />
+                <MemoryCard
+                    dataFramework="React"
+                    frontFace={require("./img/react.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="React"
+                    frontFace={require("./img/react.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="ember"
+                    frontFace={require("./img/ember.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="ember"
+                    frontFace={require("./img/ember.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="vue"
+                    frontFace={require("./img/vue.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="vue"
+                    frontFace={require("./img/vue.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="node"
+                    frontFace={require("./img/node.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="node"
+                    frontFace={require("./img/node.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="svelte"
+                    frontFace={require("./img/svelte.svg").default}
+                    alt=""
+                />
+                <MemoryCard
+                    dataFramework="svelte"
+                    frontFace={require("./img/svelte.svg").default}
+                    alt=""
+                />
             </section>
         </div>
     );
