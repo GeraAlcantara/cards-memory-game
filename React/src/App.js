@@ -1,132 +1,102 @@
+import React, { useState } from "react";
 import MemoryCard from "./components/MemoryCard";
+import { createMatrix } from './helper/shuffle';
 
 function App() {
-    const cards = document.querySelectorAll(".memory-card");
+  const [grid, setGrid] = useState(createMatrix());
+  const [matched, setMatched] = useState([]);
+  const [focused, setFocused] = useState([]);
 
-    let hasFlippedCard = false;
-    let lockBoard = false;
-    let firstCard, secondCard;
+  const resetGame = () => {
+    setMatched([]);
+    setFocused([]);
+    setGrid(createMatrix());
+  };
 
-    function flipCard() {
-        if (lockBoard) {
-            return;
+  const handleClickCard = (event) => {
+    // logic for persisting the card(s) if matched otherwise hide them
+    const cardPosition = parseInt(event.target.getAttribute("data-cell-index"));
+    // user cannot select more than two cards
+    if (focused.length > 1) return;
+    if (
+      focused.indexOf(cardPosition) === -1 &&
+      matched.indexOf(cardPosition) === -1
+    ) {
+      // user clicks the first or second card
+      if (!focused.length) {
+        // first card is selected
+        let selection = [cardPosition];
+        setGrid(
+          grid.map((ele) =>
+            ele.id === cardPosition || matched.indexOf(ele.id) > -1
+              ? { ...ele, revealed: true }
+              : { ...ele }
+          )
+        );
+        setFocused(selection);
+      } else if (focused.length === 1) {
+        // second card is selected
+        let prevSelection = focused[0];
+        let selection = [prevSelection, cardPosition];
+        setFocused(selection);
+        if (grid[prevSelection].face === grid[cardPosition].face) {
+          // cards have matched
+          const paired = matched.concat(...selection);
+          setGrid(
+            grid.map((ele) =>
+              paired.indexOf(ele.id) > -1
+                ? { ...ele, revealed: true }
+                : { ...ele, revealed: false }
+            )
+          );
+          setMatched(paired);
+          setFocused([]);
+		  // alert box to reset game   
+          if (paired.length === 12) {
+            setTimeout(() => {
+              alert(
+                "Yayy. You have solved the game. Would you like to play again?"
+              );
+              resetGame();
+            }, 2000);
+          }
+        } else {
+          // show only matched and previously selected card. Hide selection after 2s
+          setGrid(
+            grid.map((ele) =>
+              selection.indexOf(ele.id) > -1 || matched.indexOf(ele.id) > -1
+                ? { ...ele, revealed: true }
+                : { ...ele, revealed: false }
+            )
+          );
+          setTimeout(() => {
+            setGrid(
+              grid.map((ele) =>
+                matched.indexOf(ele.id) > -1
+                  ? { ...ele, revealed: true }
+                  : { ...ele, revealed: false }
+              )
+            );
+            setFocused([]);
+          }, 2000);
         }
-        if (this === firstCard) {
-            return;
-        }
-        this.classList.add("flip");
-
-        if (!hasFlippedCard) {
-            hasFlippedCard = true;
-            firstCard = this;
-            return;
-        }
-        secondCard = this;
-        /* hasFlippedCard = false; */
-
-        checkForMatch();
+      }
     }
+  };
 
-    function checkForMatch() {
-        let isMatch =
-            firstCard.dataset.framework === secondCard.dataset.framework;
-        isMatch ? disableCards() : unflipCards();
-    }
-
-    function disableCards() {
-        firstCard.removeEventListener("click", flipCard);
-        secondCard.removeEventListener("click", flipCard);
-        resetBoard();
-    }
-
-    function unflipCards() {
-        lockBoard = true;
-        setTimeout(() => {
-            firstCard.classList.remove("flip");
-            secondCard.classList.remove("flip");
-            resetBoard();
-        }, 1500);
-    }
-
-    function resetBoard() {
-        hasFlippedCard = lockBoard = false;
-        firstCard = secondCard = false;
-    }
-
-    cards.forEach((card) => {
-        const randomPos = Math.floor(Math.random() * cards.length);
-        card.style.order = randomPos;
-    });
-
-    cards.forEach((card) => card.addEventListener("click", flipCard));
-
-    return (
-        <div className="App">
-            {/* <!-- Game container --> */}
-            <section className="memory-game">
-                <MemoryCard
-                    dataFramework=""
-                    frontFace={require("./img/angular.svg").default}
-                    alt="angular"
-                />
-                <MemoryCard
-                    dataFramework=""
-                    frontFace={require("./img/angular.svg").default}
-                    alt="angular"
-                />
-                <MemoryCard
-                    dataFramework="React"
-                    frontFace={require("./img/react.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="React"
-                    frontFace={require("./img/react.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="ember"
-                    frontFace={require("./img/ember.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="ember"
-                    frontFace={require("./img/ember.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="vue"
-                    frontFace={require("./img/vue.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="vue"
-                    frontFace={require("./img/vue.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="node"
-                    frontFace={require("./img/node.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="node"
-                    frontFace={require("./img/node.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="svelte"
-                    frontFace={require("./img/svelte.svg").default}
-                    alt=""
-                />
-                <MemoryCard
-                    dataFramework="svelte"
-                    frontFace={require("./img/svelte.svg").default}
-                    alt=""
-                />
-            </section>
-        </div>
-    );
+  return (
+    <div className="App">
+      <section className="memory-game">
+        {grid.map((cell, index) => (
+          <MemoryCard
+            key={cell.face + index}
+            data={cell}
+            handleClickCard={handleClickCard}
+          />
+        ))}
+      </section>
+    </div>
+  );
 }
 
 export default App;
