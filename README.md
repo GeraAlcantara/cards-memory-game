@@ -1,20 +1,20 @@
-# cards-memory-game
+# Juego de memoria con cartas
 
-Classic card game, Flip the cards and match done in Vanilla JavaScript, Svelte, VUE, React
+El clásico juego de memoria, voltea las cartas y encuentra el par. Lenguajes utilizados: JavaScript, Svelte, VUE y React.
 
-## The game will be recreate in the folowing JavaScript Libaries
+## El juego será recreado en las siguientes librerías de JavaScript
 
 - React
 - VUE
 - Svelte
 
-### Preview
+### Vista previa
 
 ![memorie game example](https://github.com/GeraAlcantara/cards-memory-game/blob/main/img/gameExample.gif?raw=true)
 
-## Memory Card Game Base
+## Carpeta del juego de memoria
 
-You can find the game under the folder gameBase
-Please review it before try to implement any library
+Podrás encontrar el juego dentro de la carpeta gameBase.
+Por favor revísala antes de intentar de implementarlo en cualquier librería.
 
-Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md)
+No te olvides de revisar [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md) antes de realizar una contribución.
