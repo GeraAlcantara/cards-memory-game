@@ -2,74 +2,42 @@
   <!-- Game container -->
   <section class="memory-game">
     <!-- 2 Set of Cards for Angular -->
-    <div class="memory-card">
-      <img class="front-face" :src="`${imgPwd}/angular.svg`" alt="angular" />
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="angular" />
-    </div>
-    <div class="memory-card">
-      <img class="front-face" :src="`${imgPwd}/angular.svg`" alt="angular" />
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="angular" />
-    </div>
+    <card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg"/>
+    <card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg"/>
     <!-- End 2 Set of Cards for Angular -->
 
     <!-- 2 Set of Cards for React -->
-    <div class="memory-card" data-framework="React">
-      <img class="front-face" :src="`${imgPwd}/react.svg`" alt="React">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
-    <div class="memory-card" data-framework="React">
-      <img class="front-face" :src="`${imgPwd}/react.svg`" alt="React">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
+    <card-component class="memory-card" data-framework="React" :img-pwd="imgPwd" alt="react" front="react.svg"/>
+    <card-component class="memory-card" data-framework="React" :img-pwd="imgPwd" alt="react" front="react.svg"/>
     <!-- end 2 Set of Cards for React -->
 
     <!-- juego de cartas 3 ember -->
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" :src="`${imgPwd}/ember.svg`" alt="ember">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" :src="`${imgPwd}/ember.svg`" alt="ember">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
+    <card-component class="memory-card" data-framework="ember" :img-pwd="imgPwd" alt="ember" front="ember.svg"/>
+    <card-component class="memory-card" data-framework="ember" :img-pwd="imgPwd" alt="ember" front="ember.svg"/>
     <!-- end juego de cartas 1 ember -->
 
     <!-- juego de cartas 4 Vue -->
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" :src="`${imgPwd}/vue.svg`" alt="vue">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" :src="`${imgPwd}/vue.svg`" alt="vue">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
+    <card-component class="memory-card" data-framework="vue" :img-pwd="imgPwd" alt="vue" front="vue.svg"/>
+    <card-component class="memory-card" data-framework="vue" :img-pwd="imgPwd" alt="vue" front="vue.svg"/>
     <!-- end juego de cartas 4 Vue -->
 
     <!-- juego de cartas 5 node -->
-    <div class="memory-card" data-framework="node">
-      <img class="front-face" :src="`${imgPwd}/node.svg`" alt="node">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
-    <div class="memory-card" data-framework="node">
-      <img class="front-face" :src="`${imgPwd}/node.svg`" alt="node">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
+    <card-component class="memory-card" data-framework="node" :img-pwd="imgPwd" alt="node" front="node.svg"/>
+    <card-component class="memory-card" data-framework="node" :img-pwd="imgPwd" alt="node" front="node.svg"/>
     <!-- end juego de cartas 5 node -->
 
     <!-- juego de cartas 5 svelte -->
-    <div class="memory-card" data-framework="svelte">
-      <img class="front-face" :src="`${imgPwd}/svelte.svg`" alt="svelte">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
-    <div class="memory-card" data-framework="svelte">
-      <img class="front-face" :src="`${imgPwd}/svelte.svg`" alt="svelte">
-      <img class="back-face" :src="`${imgPwd}/js-badge.svg`" alt="memory card">
-    </div>
+    <card-component class="memory-card" data-framework="svelte" :img-pwd="imgPwd" alt="svelte" front="svelte.svg"/>
+    <card-component class="memory-card" data-framework="svelte" :img-pwd="imgPwd" alt="svelte" front="svelte.svg"/>
     <!-- end juego de cartas 5 svelte -->
   </section>
 </template>
 <script>
+
+import CardComponent from '@/components/CardComponent.vue'
+
 export default {
+  components: {CardComponent},
   data() {
     return {
       imgPwd: "src/assets/img",

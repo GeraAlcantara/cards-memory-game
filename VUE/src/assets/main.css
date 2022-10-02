@@ -6,8 +6,13 @@
 
 body {
     height: 100vh;
-    display: flex;
     background-color: #342a62;
+}
+
+#app {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .memory-game {
