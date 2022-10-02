@@ -91,11 +91,10 @@ Click the green Compare & pull request button to begin the pull request.
 
 Before submitting the pull request, you first need to describe the changes you made (rather than asking the project maintainers to figure them out on their own). You should write a descriptive title for your pull request, and then include more details in the body of the pull request. If there are any related GitHub issues, make sure to mention those by number. The body can include Markdown formatting, and you can click the Preview tab to see how it will look.
   
-  ![Screenshot from 2022-10-02 08-25-49](https://user-images.githubusercontent.com/110360901/193435881-761795ce-fe72-4f2d-9cd5-3ae2d2f71f69.png)
+  ![Screenshot from 2022-10-02 08-36-12](https://user-images.githubusercontent.com/110360901/193436085-7658b3b6-82fe-4312-83e9-677e371b8222.png)
 
 On the right side, you may see a link to the project's Contributing guidelines. This is primarily worth reading through if you are submitting substantial code (rather than just fixing a typo), but it may still be worth scanning through at this point.
 
-Below the pull request form, you will see a list of the commits you made in your branch, as well as the "diffs" for all of the files you changed.
-  ![imageedit_2_8648072164](https://user-images.githubusercontent.com/110360901/193435989-9efb9198-6551-4bc0-8c8d-e7bec3255fbe.png)
+Below the pull request form, you will see a list of the commits you made in your branch, as well as the "diffs" for all of the files you changed.![imageedit_4_2018320298](https://user-images.githubusercontent.com/110360901/193436276-3b1dad3b-adcc-4e14-b1db-194573c85ee2.png)
 
 If everything looks good, click the green Create pull request button!
