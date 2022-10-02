@@ -34,11 +34,15 @@ export const App = () => {
 
   const cardClicked = (idx: number) => {
     if (openCards.length == 1) {
-      setOpenCards((prevIndex) => [
-        ...prevIndex,
-        idx
-      ]);
-      setClickable(false);
+      const [prevCardIdx] = openCards;
+      
+      if (prevCardIdx != idx) {
+        setOpenCards((prevIndex) => [
+          ...prevIndex,
+          idx
+        ]);
+        setClickable(false);
+      }
 
     } else {
       setOpenCards([idx]);
