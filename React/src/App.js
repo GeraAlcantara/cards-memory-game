@@ -78,7 +78,7 @@ function App() {
               )
             );
             setFocused([]);
-          }, 2000);
+          }, 500);
         }
       }
     }
