@@ -2,6 +2,8 @@
 
 A classic card game, flip and match the cards done in Vanilla JavaScript, Svelte, VUE, React and TypeScript.
 
+Show love 💜 to the repo by giving a ⭐
+
 ## Preview
 
 ![memorie game example](https://github.com/GeraAlcantara/cards-memory-game/blob/main/img/gameExample.gif?raw=true)
