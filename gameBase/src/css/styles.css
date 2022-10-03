@@ -36,8 +36,8 @@ body {
 }
 
 .memory-card.flip img:hover {
-  transition: none;
   background-color: #527089;
+  transition: none;
 }
 
 .memory-card:active {
