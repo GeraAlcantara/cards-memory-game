@@ -1,6 +1,6 @@
 # cards-memory-game
 
-A classic card game, flip and match the cards done in Vanilla JavaScript, Svelte, VUE, React
+A classic card game, flip and match the cards done in Vanilla JavaScript, Svelte, VUE, React and TypeScript.
 
 ## Preview
 
