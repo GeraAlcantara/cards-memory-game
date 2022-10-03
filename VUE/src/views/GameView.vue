@@ -2,8 +2,8 @@
 	<!-- Game container -->
 	<section class="memory-game">
 		<!-- 2 Set of Cards -->
-		<card-component v-for="card in cards" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
-		<card-component v-for="card in cards" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
+		<card-component v-for="card in cards" :key="`${card.name}-1`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
+		<card-component v-for="card in cards" :key="`${card.name}-2`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
 		<!-- <card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg" /> -->
 		<!-- End 2 Set of Cards -->
 	</section>
