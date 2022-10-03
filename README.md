@@ -18,3 +18,8 @@ You can find the game under the folder gameBase.
 Please review it before you try to implement it in any library.
 
 Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md) for contributing purposes.
+
+Resources:
+Base on the proyect of [Marina Ferreira](https://github.com/marina-ferreira)
+[Medium Post](https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae)
+[Repository](https://github.com/code-sketch/memory-game)
