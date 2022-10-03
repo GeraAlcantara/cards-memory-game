@@ -28,6 +28,17 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.memory-card img:hover {
+  background-color: #415d74;
+  transition: 0.5s;
+}
+
+.memory-card.flip img:hover {
+  background-color: #527089;
+  transition: none;
 }
 
 .memory-card:active {

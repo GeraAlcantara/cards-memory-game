@@ -28,6 +28,7 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  cursor: pointer;
 }
 
 .memory-card img:hover {
