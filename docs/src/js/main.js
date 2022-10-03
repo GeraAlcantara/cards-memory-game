@@ -49,6 +49,16 @@ function resetBoard() {
   firstCard = secondCard = false;
 }
 
+function removeDragImages() {
+  var allImages = document.getElementsByTagName("img");
+  for (element of allImages) { 
+    element.draggable = false;
+  }
+}
+
+removeDragImages()
+
+
 cards.forEach((card) => {
   const randomPos = Math.floor(Math.random() * cards.length);
   card.style.order = randomPos;
