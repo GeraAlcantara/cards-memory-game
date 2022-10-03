@@ -2,19 +2,19 @@
 
 A classic card game, flip and match the cards done in Vanilla JavaScript, Svelte, VUE, React
 
-## The game will be recreated in the following JavaScript libraries:
+## Preview
+
+![memorie game example](https://github.com/GeraAlcantara/cards-memory-game/blob/main/img/gameExample.gif?raw=true)
+
+### The game will be recreated in the following JavaScript libraries:
 
 - React
 - VUE
 - Svelte
 
-### Preview
-
-![memorie game example](https://github.com/GeraAlcantara/cards-memory-game/blob/main/img/gameExample.gif?raw=true)
-
-### Memory Card Game Base
+### cards-memory-game Base
 
 You can find the game under the folder gameBase
 Please review it before you try to implement it in any library.
 
-Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md)
+Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md) for contributing purposes.
