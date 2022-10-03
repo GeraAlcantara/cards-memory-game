@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    margin-top: 120px;
 }
 
 .memory-card {
@@ -57,4 +58,39 @@ body {
 
 .memory-card.flip {
     transform: rotateY(180deg);
+}
+
+/* history */
+.score {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    border: 4px solid #dbdbdb;
+    border-radius: 4px;
+}
+.score-container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 8px;
+    color: #e6e6e6;
+    font-size: 16px;
+    font-weight: normal;
+}
+.score-board {
+    font-weight: normal;
+    font-size: 32px;
+    padding: 8px;
+    margin: auto;
+}
+.highscore {
+    color: #e6e6e6;
+    padding: 32px 0 16px 48px;
+    width: 90%;
+}
+.history {
+    color: #c0c0c0;
+    display: flex;
+    padding-top: 24px;
+    justify-content: space-between;
 }
