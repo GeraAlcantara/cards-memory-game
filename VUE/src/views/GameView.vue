@@ -1,36 +1,11 @@
 <template>
 	<!-- Game container -->
 	<section class="memory-game">
-		<!-- TODO: #31 Implement a loop to create each component -->
-		<!-- 2 Set of Cards for Angular -->
-		<card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg" />
-		<card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg" />
-		<!-- End 2 Set of Cards for Angular -->
-
-		<!-- 2 Set of Cards for React -->
-		<card-component class="memory-card" data-framework="React" :img-pwd="imgPwd" alt="react" front="react.svg" />
-		<card-component class="memory-card" data-framework="React" :img-pwd="imgPwd" alt="react" front="react.svg" />
-		<!-- end 2 Set of Cards for React -->
-
-		<!-- juego de cartas 3 ember -->
-		<card-component class="memory-card" data-framework="ember" :img-pwd="imgPwd" alt="ember" front="ember.svg" />
-		<card-component class="memory-card" data-framework="ember" :img-pwd="imgPwd" alt="ember" front="ember.svg" />
-		<!-- end juego de cartas 1 ember -->
-
-		<!-- juego de cartas 4 Vue -->
-		<card-component class="memory-card" data-framework="vue" :img-pwd="imgPwd" alt="vue" front="vue.svg" />
-		<card-component class="memory-card" data-framework="vue" :img-pwd="imgPwd" alt="vue" front="vue.svg" />
-		<!-- end juego de cartas 4 Vue -->
-
-		<!-- juego de cartas 5 node -->
-		<card-component class="memory-card" data-framework="node" :img-pwd="imgPwd" alt="node" front="node.svg" />
-		<card-component class="memory-card" data-framework="node" :img-pwd="imgPwd" alt="node" front="node.svg" />
-		<!-- end juego de cartas 5 node -->
-
-		<!-- juego de cartas 5 svelte -->
-		<card-component class="memory-card" data-framework="svelte" :img-pwd="imgPwd" alt="svelte" front="svelte.svg" />
-		<card-component class="memory-card" data-framework="svelte" :img-pwd="imgPwd" alt="svelte" front="svelte.svg" />
-		<!-- end juego de cartas 5 svelte -->
+		<!-- 2 Set of Cards -->
+		<card-component v-for="card in cards" :key="`${card.name}-1`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
+		<card-component v-for="card in cards" :key="`${card.name}-2`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
+		<!-- <card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg" /> -->
+		<!-- End 2 Set of Cards -->
 	</section>
 </template>
 <script>
@@ -41,6 +16,32 @@ export default {
 	components: { CardComponent },
 	data() {
 		return {
+			cards: [
+				{
+					name: "react",
+					front: "react.svg",
+				},
+				{
+					name: "ember",
+					front: "ember.svg",
+				},
+				{
+					name: "vue",
+					front: "vue.svg",
+				},
+				{
+					name: "node",
+					front: "node.svg",
+				},
+				{
+					name: "svelte",
+					front: "svelte.svg",
+				},
+				{
+					name: "angular",
+					front: "angular.svg",
+				},
+			],
 			imgPwd: 'src/assets/img',
 			hasFlippedCard: false,
 			lockBoard: false,
