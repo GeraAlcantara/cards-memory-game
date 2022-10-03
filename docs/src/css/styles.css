@@ -19,12 +19,12 @@ body {
   perspective: 1000px;
   padding: 10px;
   max-height: 640px;
-  max-width: 640px; 
+  max-width: 640px;
 }
 
 .memory-card {
   width: calc(25% - 10px);
-  height: calc(33.333% -10px);
+  height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -65,17 +65,4 @@ body {
 
 .memory-card.flip {
   transform: rotateY(180deg);
-}
-
-@media (min-width: 375px) and (max-width: 915px) {
-  .memory-card {
-    width: calc(25% - 10px);
-    height: calc(33.333% -10px);
-    transform: scale(1);
-  }
-
-  .memory-card .front-face {
-    width: 100%;
-    height: 100%;
-  }
 }
