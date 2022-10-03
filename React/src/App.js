@@ -18,6 +18,10 @@ function App() {
     const cardPosition = parseInt(event.target.getAttribute("data-cell-index"));
     // user cannot select more than two cards
     if (focused.length > 1) return;
+
+    // 'cardPosition' is NaN, when user click the same card frequently
+    if (isNaN(cardPosition))  return;
+
     if (
       focused.indexOf(cardPosition) === -1 &&
       matched.indexOf(cardPosition) === -1
