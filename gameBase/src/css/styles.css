@@ -30,6 +30,16 @@ body {
   transition: transform 0.5s;
 }
 
+.memory-card img:hover {
+  background-color: #415d74;
+  transition: 0.5s;
+}
+
+.memory-card.flip img:hover {
+  background-color: #527089;
+  transition: none;
+}
+
 .memory-card:active {
   transform: scale(0.97);
   transition: transform 0.2s;
