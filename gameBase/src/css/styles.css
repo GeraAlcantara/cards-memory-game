@@ -31,11 +31,13 @@ body {
 }
 
 .memory-card img:hover {
+  background-color: #415d74;
   transition: 0.5s;
 }
 
-.memory-card img:hover {
-  background-color: #415d74;
+.memory-card.flip img:hover {
+  transition: none;
+  background-color: #527089;
 }
 
 .memory-card:active {
