@@ -14,7 +14,7 @@ A classic card game, flip and match the cards done in Vanilla JavaScript, Svelte
 
 ### cards-memory-game Base
 
-You can find the game under the folder gameBase
+You can find the game under the folder gameBase.
 Please review it before you try to implement it in any library.
 
 Please check the [contribution.md](https://github.com/GeraAlcantara/cards-memory-game/blob/main/CONTRIBUTING.md) for contributing purposes.
