@@ -1,6 +1,0 @@
-//Use media hover with media pointer will help you resolve this issue. Tested on chrome Web and android mobile.
-
-@media (hover: hover) and (pointer: fine) {
-  a:hover { color: red; }
-}
-<a href="#" >Some Link</a>
