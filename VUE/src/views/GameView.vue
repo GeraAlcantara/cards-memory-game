@@ -64,7 +64,8 @@ export default {
 			if (this.lockBoard) {
 				return
 			}
-			if (this === this.firstCard) {
+			if (event.currentTarget === this.firstCard) {
+				// Fixed Issue #38 : card remains flipped when card was double clicked both in React and Vue app
 				return
 			}
 
