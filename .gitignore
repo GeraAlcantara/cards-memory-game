@@ -4,7 +4,7 @@
 node_modules
 .pnp
 .pnp.js
-
+CODE_OF_CONDUCT.md
 # testing
 React/react-memory-game/coverage
 

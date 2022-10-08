@@ -11,17 +11,20 @@ body {
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
+  width: 100%;
+  height: calc(100% / 4 * 3);
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  padding: 10px;
+  max-height: 640px;
+  max-width: 640px;
 }
 
 .memory-card {
   width: calc(25% - 10px);
-  height: calc(33.333% -10px);
+  height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -31,14 +34,16 @@ body {
   cursor: pointer;
 }
 
-.memory-card img:hover {
-  background-color: #415d74;
-  transition: 0.5s;
-}
+@media (hover: hover) {
+  .memory-card img:hover {
+    background-color: #415d74;
+    transition: 0.5s;
+  }
 
-.memory-card.flip img:hover {
-  background-color: #527089;
-  transition: none;
+  .memory-card.flip img:hover {
+    background-color: #527089;
+    transition: none;
+  }
 }
 
 .memory-card:active {
