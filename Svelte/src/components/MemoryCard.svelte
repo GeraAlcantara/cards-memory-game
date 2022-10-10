@@ -1,36 +1,34 @@
 <script>
+  import { createEventDispatcher } from 'svelte'
   import backSVG from '../assets/js-badge.svg'
-  import frontSVG from '../assets/vue.svg'
 
   // PROPS
-  export let card;
+  export let framework
+  export let card
 
-  // STATE
-  let flipped = false;
+  const dispatch = createEventDispatcher();
 
   // HANDLERS
   function flip(e) {
-    flipped = !flipped
-    e.currentTarget.classList.toggle('flip')
+    dispatch('flip', {
+      card: e.currentTarget
+    });
   }
-  
 </script>
 
 <div
+  data-framework={framework}
   class={`memory-card`}
   on:click={flip}
 >
-  {#if !flipped}
-    <img
-      class={'back-face'}
-      src={backSVG}
-      alt="Click me!"
-    />
-  {:else}
-    <img
-      class='front-face'
-      src={`/src/assets/${card.face}`}
-      alt='card face'
-    />
-  {/if}
+  <img
+    class={'back-face'}
+    src={backSVG}
+    alt="Click me!"
+  />
+  <img
+    class='front-face'
+    src={`/src/assets/${card.face}`}
+    alt='card face'
+  />
 </div>
