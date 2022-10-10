@@ -30,11 +30,23 @@
 	]
 
 	// STATE
+	let correctMatch = 0
 	let lockBoard = false
 	let firstCard = null
 	let secondCard = null
 
 	// HELPERS
+	function randomizeCardOrder() {
+		// randomize the position of card
+		const cards = document.querySelectorAll('.memory-card')
+
+		cards.forEach((card) => {
+			const randomPos = Math.floor(Math.random() * cards.length)
+			// @ts-ignore
+			card.style.order = randomPos
+		})
+	}
+
 	function unflipCards() {
 		setTimeout(() => {
 			firstCard.classList.remove('flip')
@@ -73,22 +85,29 @@
 		
 		lockBoard = true
 		if (firstCard.dataset['framework'] === secondCard.dataset['framework']) {
+			correctMatch++
 			disableCards()
 		} else {
 			unflipCards()
 		}
 	}
+
+	function resetGame() {
+		// unflip all cards
+		document.querySelectorAll('.memory-card').forEach(card => {
+			card.classList.remove('flip')
+			card.addEventListener('click', handleCardFlip);
+		})
+
+		randomizeCardOrder()
+
+		correctMatch = 0
+		resetBoard()
+	}
 	
 	// RUNS AFTER THE COMPONENT FIRST RENDER
 	onMount(() => {
-		// randomize the position of card
-		const cards = document.querySelectorAll('.memory-card')
-
-		cards.forEach((card) => {
-			const randomPos = Math.floor(Math.random() * cards.length)
-			// @ts-ignore
-			card.style.order = randomPos
-		})
+		randomizeCardOrder();
 	})
 </script>
 
@@ -105,4 +124,45 @@
       card={card} 
     />
   {/each}
+
+	{#if correctMatch === 6}
+		<div class="modal">
+			<h3>You WON!!!</h3>
+			<button class="reset" on:click={resetGame}>Reset</button>
+		</div>
+	{/if}
 </main>
+
+<style scoped>
+.modal {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	position: absolute;
+	background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+	width: 600px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	border-radius: 9px;
+
+	font-size: 4rem;
+	letter-spacing: 1px;
+}
+
+.modal h3 {
+	margin-top: 3rem;
+	color: #6aaf90;
+}
+
+.reset {
+	background-color: #ed6755;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 14px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+}
+</style>
