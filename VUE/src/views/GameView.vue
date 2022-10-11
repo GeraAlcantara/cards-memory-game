@@ -1,47 +1,23 @@
 <template>
 	<!-- Game container -->
 	<section class="memory-game">
-		<!-- 2 Set of Cards -->
-		<card-component v-for="card in cards" :key="`${card.name}-1`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
-		<card-component v-for="card in cards" :key="`${card.name}-2`" class="memory-card" :data-framework="card.name" :img-pwd="imgPwd" :alt="card.name" :front="card.front" />
-		<!-- <card-component class="memory-card" :img-pwd="imgPwd" alt="angular" front="angular.svg" /> -->
-		<!-- End 2 Set of Cards -->
+    <template v-for="index in cardsNum">
+      <card-component v-for="(cardName, idx) in cards.names" :key="`${cardName}-${index}`" class="memory-card" :data-framework="cardName" :img-pwd="imgPwd" :alt="cardName" :front="cards['images'][idx]" />
+    </template>
 	</section>
 </template>
 <script>
 import CardComponent from '@/components/CardComponent.vue'
 
 export default {
-	/* TODO:  #32 Implement a 2D dimencional array to place the card on the grid  */
 	components: { CardComponent },
 	data() {
 		return {
-			cards: [
-				{
-					name: "react",
-					front: "react.svg",
-				},
-				{
-					name: "ember",
-					front: "ember.svg",
-				},
-				{
-					name: "vue",
-					front: "vue.svg",
-				},
-				{
-					name: "node",
-					front: "node.svg",
-				},
-				{
-					name: "svelte",
-					front: "svelte.svg",
-				},
-				{
-					name: "angular",
-					front: "angular.svg",
-				},
-			],
+      cardsNum: 2,
+			cards: {
+        names: ["react", "ember", "vue", "node", "svelte", "angular"],
+        images: ["react.svg", "ember.svg", "vue.svg", "node.svg", "svelte.svg", "angular.svg"]
+      },
 			imgPwd: 'src/assets/img',
 			hasFlippedCard: false,
 			lockBoard: false,
@@ -66,7 +42,7 @@ export default {
 			}
 			if (event.currentTarget === this.firstCard) {
 				// Fixed Issue #38 : card remains flipped when card was double clicked both in React and Vue app
-				return
+				this.unflipCards()
 			}
 
 			event.currentTarget.classList.add('flip')
