@@ -34,6 +34,7 @@
 	let lockBoard = false
 	let firstCard = null
 	let secondCard = null
+	let flippedCards = []
 
 	// HELPERS
 	function randomizeCardOrder() {
@@ -56,8 +57,7 @@
 	}
 
 	function disableCards() {
-		firstCard.removeEventListener('click', firstCard)
-		secondCard.removeEventListener('click', secondCard)
+		flippedCards.push(firstCard, secondCard)
 		resetBoard()
 	}
 
@@ -73,6 +73,8 @@
 		if (lockBoard)	return
 
 		if (card === firstCard) return
+
+		if (flippedCards.includes(card))	return
 
 		card.classList.add('flip')
 
@@ -96,12 +98,12 @@
 		// unflip all cards
 		document.querySelectorAll('.memory-card').forEach(card => {
 			card.classList.remove('flip')
-			card.addEventListener('click', handleCardFlip);
 		})
 
 		randomizeCardOrder()
 
 		correctMatch = 0
+		flippedCards = []
 		resetBoard()
 	}
 	
